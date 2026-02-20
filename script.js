@@ -2,8 +2,48 @@
 // INITIALISATION
 // ===============================
 
-let factures = JSON.parse(localStorage.getItem("factures")) || [];
-
+const facturesExemple = [
+  {
+    date: "2026-02-01",
+    nom: "TELMA Madagascar",
+    montant: 120000,
+    type: "vente",
+  },
+  { date: "2026-02-02", nom: "Orange Money", montant: 85000, type: "vente" },
+  { date: "2026-02-03", nom: "Starlink", montant: 230000, type: "achat" },
+  { date: "2026-02-04", nom: "Client Beta", montant: 120000, type: "achat" },
+  { date: "2026-02-05", nom: "Client Alpha", montant: 95000, type: "vente" },
+  { date: "2026-02-06", nom: "Fournisseur X", montant: 50000, type: "achat" },
+  { date: "2026-02-07", nom: "Client Gamma", montant: 175000, type: "vente" },
+  {
+    date: "2026-02-08",
+    nom: "TELMA Madagascar",
+    montant: 200000,
+    type: "achat",
+  },
+  { date: "2026-02-09", nom: "Orange Money", montant: 150000, type: "vente" },
+  { date: "2026-02-10", nom: "Client Delta", montant: 130000, type: "achat" },
+  { date: "2026-02-11", nom: "Starlink", montant: 95000, type: "achat" },
+  { date: "2026-02-12", nom: "Client Epsilon", montant: 110000, type: "vente" },
+  { date: "2026-02-13", nom: "Fournisseur Y", montant: 80000, type: "achat" },
+  { date: "2026-02-14", nom: "Client Zeta", montant: 175000, type: "vente" },
+  {
+    date: "2026-02-15",
+    nom: "TELMA Madagascar",
+    montant: 125000,
+    type: "achat",
+  },
+  { date: "2026-02-16", nom: "Orange Money", montant: 90000, type: "vente" },
+  { date: "2026-02-17", nom: "Client Eta", montant: 140000, type: "achat" },
+  { date: "2026-02-18", nom: "Client Theta", montant: 160000, type: "vente" },
+  { date: "2026-02-19", nom: "Starlink", montant: 210000, type: "achat" },
+  { date: "2026-02-20", nom: "Client Iota", montant: 125000, type: "vente" },
+]; // Charger les factures depuis localStorage ou initialiser si vide
+let factures = JSON.parse(localStorage.getItem("factures"));
+if (!factures || factures.length === 0) {
+  factures = facturesExemple;
+  localStorage.setItem("factures", JSON.stringify(factures));
+}
 // ===============================
 // FORMAT ARIARY
 // ===============================
