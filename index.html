@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cabinet Excellent</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-left">
+        <h1>Cabinet Excellent</h1>
+      </div>
+      <div class="nav-right">
+        <a href="index.html"><button>🏠 Dashboard</button></a>
+        <a href="add.html"><button>➕ Ajouter Facture</button></a>
+        <a href="journal.html"><button>📄 Journal</button></a>
+        <button id="darkModeToggle">🌓</button>
+      </div>
+    </header>
+
+    <section class="dashboard">
+      <h2>Résumé</h2>
+      <p>Total Achats : <strong id="totalAchats">0 Ar</strong></p>
+      <p>Total Ventes : <strong id="totalVentes">0 Ar</strong></p>
+      <p>Résultat : <strong id="resultat">0 Ar</strong></p>
+    </section>
+
+    <section class="search-section">
+      <h2>Recherche</h2>
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Rechercher par nom ou type..."
+        />
+        <button id="searchBtn">🔍</button>
+        <ul id="searchResults"></ul>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

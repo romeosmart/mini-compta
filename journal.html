@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journal Comptable</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-left">
+        <h1>Cabinet Excellent</h1>
+      </div>
+      <div class="nav-right">
+        <a href="index.html"><button>🏠 Dashboard</button></a>
+        <a href="add.html"><button>➕ Ajouter Facture</button></a>
+        <a href="journal.html"><button>📄 Journal</button></a>
+        <button id="darkModeToggle">🌓</button>
+      </div>
+    </header>
+
+    <section class="journal">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Nom</th>
+            <th>Type</th>
+            <th>Montant</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="journalBody"></tbody>
+      </table>
+
+      <div class="buttons">
+        <button id="exportCsv">Exporter CSV</button>
+        <button id="exportPdf">Exporter PDF</button>
+        <input type="file" id="importCsv" accept=".csv" />
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
