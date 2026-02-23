@@ -141,6 +141,27 @@ section {
   background: #218838;
 }
 
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1.5px solid #ccc;
+  font-size: 1em;
+  min-height: 48px;
+  resize: vertical;
+  background: #f8fbff;
+  transition:
+    border 0.2s,
+    background 0.2s;
+  box-sizing: border-box;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  background: #eaf4ff;
+}
+
 /* ===============================
    TABLE
 ================================= */

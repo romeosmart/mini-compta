@@ -8,42 +8,148 @@ const facturesExemple = [
     nom: "TELMA Madagascar",
     montant: 120000,
     type: "vente",
+    description: "Vente d'abonnement internet professionnel.",
   },
-  { date: "2026-02-02", nom: "Orange Money", montant: 85000, type: "vente" },
-  { date: "2026-02-03", nom: "Starlink", montant: 230000, type: "achat" },
-  { date: "2026-02-04", nom: "Client Beta", montant: 120000, type: "achat" },
-  { date: "2026-02-05", nom: "Client Alpha", montant: 95000, type: "vente" },
-  { date: "2026-02-06", nom: "Fournisseur X", montant: 50000, type: "achat" },
-  { date: "2026-02-07", nom: "Client Gamma", montant: 175000, type: "vente" },
+  {
+    date: "2026-02-02",
+    nom: "Orange Money",
+    montant: 85000,
+    type: "vente",
+    description: "Vente de service de paiement mobile.",
+  },
+  {
+    date: "2026-02-03",
+    nom: "Starlink",
+    montant: 230000,
+    type: "achat",
+    description: "Achat d'équipement satellite pour connexion internet.",
+  },
+  {
+    date: "2026-02-04",
+    nom: "Client Beta",
+    montant: 120000,
+    type: "achat",
+    description: "Achat de fournitures de bureau.",
+  },
+  {
+    date: "2026-02-05",
+    nom: "Client Alpha",
+    montant: 95000,
+    type: "vente",
+    description: "Vente de prestation de conseil informatique.",
+  },
+  {
+    date: "2026-02-06",
+    nom: "Fournisseur X",
+    montant: 50000,
+    type: "achat",
+    description: "Achat de consommables informatiques.",
+  },
+  {
+    date: "2026-02-07",
+    nom: "Client Gamma",
+    montant: 175000,
+    type: "vente",
+    description: "Vente de licence logicielle annuelle.",
+  },
   {
     date: "2026-02-08",
     nom: "TELMA Madagascar",
     montant: 200000,
     type: "achat",
+    description: "Achat de forfait téléphonique entreprise.",
   },
-  { date: "2026-02-09", nom: "Orange Money", montant: 150000, type: "vente" },
-  { date: "2026-02-10", nom: "Client Delta", montant: 130000, type: "achat" },
-  { date: "2026-02-11", nom: "Starlink", montant: 95000, type: "achat" },
-  { date: "2026-02-12", nom: "Client Epsilon", montant: 110000, type: "vente" },
-  { date: "2026-02-13", nom: "Fournisseur Y", montant: 80000, type: "achat" },
-  { date: "2026-02-14", nom: "Client Zeta", montant: 175000, type: "vente" },
+  {
+    date: "2026-02-09",
+    nom: "Orange Money",
+    montant: 150000,
+    type: "vente",
+    description: "Vente de service de paiement mobile premium.",
+  },
+  {
+    date: "2026-02-10",
+    nom: "Client Delta",
+    montant: 130000,
+    type: "achat",
+    description: "Achat de mobilier de bureau.",
+  },
+  {
+    date: "2026-02-11",
+    nom: "Starlink",
+    montant: 95000,
+    type: "achat",
+    description: "Achat d'accessoires réseau.",
+  },
+  {
+    date: "2026-02-12",
+    nom: "Client Epsilon",
+    montant: 110000,
+    type: "vente",
+    description: "Vente de prestation de maintenance informatique.",
+  },
+  {
+    date: "2026-02-13",
+    nom: "Fournisseur Y",
+    montant: 80000,
+    type: "achat",
+    description: "Achat de fournitures diverses.",
+  },
+  {
+    date: "2026-02-14",
+    nom: "Client Zeta",
+    montant: 175000,
+    type: "vente",
+    description: "Vente de solution cloud personnalisée.",
+  },
   {
     date: "2026-02-15",
     nom: "TELMA Madagascar",
     montant: 125000,
     type: "achat",
+    description: "Achat de routeur professionnel.",
   },
-  { date: "2026-02-16", nom: "Orange Money", montant: 90000, type: "vente" },
-  { date: "2026-02-17", nom: "Client Eta", montant: 140000, type: "achat" },
-  { date: "2026-02-18", nom: "Client Theta", montant: 160000, type: "vente" },
-  { date: "2026-02-19", nom: "Starlink", montant: 210000, type: "achat" },
-  { date: "2026-02-20", nom: "Client Iota", montant: 125000, type: "vente" },
+  {
+    date: "2026-02-16",
+    nom: "Orange Money",
+    montant: 90000,
+    type: "vente",
+    description: "Vente de service de paiement mobile standard.",
+  },
+  {
+    date: "2026-02-17",
+    nom: "Client Eta",
+    montant: 140000,
+    type: "achat",
+    description: "Achat de matériel informatique.",
+  },
+  {
+    date: "2026-02-18",
+    nom: "Client Theta",
+    montant: 160000,
+    type: "vente",
+    description: "Vente de prestation de développement web.",
+  },
+  {
+    date: "2026-02-19",
+    nom: "Starlink",
+    montant: 210000,
+    type: "achat",
+    description: "Achat d'abonnement satellite annuel.",
+  },
+  {
+    date: "2026-02-20",
+    nom: "Client Iota",
+    montant: 125000,
+    type: "vente",
+    description: "Vente de prestation de cybersécurité.",
+  },
 ]; // Charger les factures depuis localStorage ou initialiser si vide
 let factures = JSON.parse(localStorage.getItem("factures"));
 if (!factures || factures.length === 0) {
   factures = facturesExemple;
   localStorage.setItem("factures", JSON.stringify(factures));
 }
+
 // ===============================
 // FORMAT ARIARY
 // ===============================
@@ -84,13 +190,16 @@ if (btn) {
     const nom = document.getElementById("nom").value.trim();
     const montant = parseFloat(document.getElementById("montant").value);
     const type = document.getElementById("type").value;
+    const description = document.getElementById("description")
+      ? document.getElementById("description").value.trim()
+      : "";
 
     if (!date || !nom || isNaN(montant) || montant <= 0) {
       alert("Veuillez remplir correctement tous les champs.");
       return;
     }
 
-    factures.push({ date, nom, montant, type });
+    factures.push({ date, nom, montant, type, description });
     localStorage.setItem("factures", JSON.stringify(factures));
 
     window.location.href = "journal.html";
@@ -114,6 +223,7 @@ if (journalBody) {
       <td>${facture.nom}</td>
       <td>${facture.type}</td>
       <td>${formatAr(facture.montant)}</td>
+      <td>${facture.description && facture.description.trim() !== "" ? facture.description : "-"}</td>
       <td>
         <button class="delete-btn" data-index="${index}">
           Supprimer
@@ -299,10 +409,10 @@ const exportCsvBtn = document.getElementById("exportCsv");
 
 if (exportCsvBtn) {
   exportCsvBtn.addEventListener("click", () => {
-    let csv = "Date,Nom,Type,Montant\n";
+    let csv = "Date,Nom,Type,Montant,Description\n";
 
     factures.forEach((f) => {
-      csv += `${f.date},${f.nom},${f.type},${f.montant}\n`;
+      csv += `${f.date},${f.nom},${f.type},${f.montant},${f.description ? f.description.replace(/,/g, " ") : ""}\n`;
     });
 
     const blob = new Blob([csv], { type: "text/csv" });
@@ -333,7 +443,7 @@ if (exportPdfBtn) {
 
     factures.forEach((f) => {
       doc.text(
-        `${f.date} | ${f.nom} | ${f.type} | ${formatAr(f.montant)}`,
+        `${f.date} | ${f.nom} | ${f.type} | ${formatAr(f.montant)} | ${f.description ? f.description : "-"}`,
         10,
         y,
       );
@@ -361,12 +471,13 @@ if (importCsvInput) {
       lines.forEach((line) => {
         if (!line.trim()) return;
 
-        const [date, nom, type, montant] = line.split(",");
+        const [date, nom, type, montant, description] = line.split(",");
         factures.push({
           date,
           nom,
           type,
           montant: parseFloat(montant),
+          description: description ? description.trim() : "",
         });
       });
 
