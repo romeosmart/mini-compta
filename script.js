@@ -488,3 +488,46 @@ if (importCsvInput) {
     reader.readAsText(file);
   });
 }
+
+// Compte unique (à personnaliser)
+const UNIQUE_USER = {
+  username: "admin",
+  password: "1234",
+};
+
+// Gestion du login obligatoire
+
+document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.querySelector(".login-form");
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      // Vérification du compte unique
+      if (
+        username === UNIQUE_USER.username &&
+        password === UNIQUE_USER.password
+      ) {
+        localStorage.setItem("loggedUser", JSON.stringify({ username }));
+        window.location.href = "index.html";
+      } else {
+        alert("Identifiants incorrects. Veuillez réessayer.");
+      }
+    });
+  }
+});
+
+// Fonction pour vérifier la connexion sur les autres pages
+function checkLogin() {
+  const user = localStorage.getItem("loggedUser");
+  if (!user) {
+    window.location.href = "login.html";
+  }
+}
+
+// Déconnexion
+function logout() {
+  localStorage.removeItem("loggedUser");
+  window.location.href = "login.html";
+}

@@ -15,6 +15,7 @@
         <a href="index.html"><button>🏠 Dashboard</button></a>
         <a href="journal.html"><button>📄 Journal</button></a>
         <button id="darkModeToggle">🌓</button>
+        <button class="logout-btn" onclick="logout()">Déconnexion</button>
       </div>
     </header>
 
@@ -62,5 +63,8 @@
     <div id="successPopover" class="popover">Facture ajoutée avec succès !</div>
 
     <script src="script.js"></script>
+    <script>
+      checkLogin();
+    </script>
   </body>
 </html>
